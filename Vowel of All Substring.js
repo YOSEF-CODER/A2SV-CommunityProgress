@@ -2,7 +2,7 @@
  * @param {string} word
  * @return {number}
  */
-var countVowels = function("ltcd") {
+var countVowels = function(word) {
    
    let i, j;
    const res = [];
