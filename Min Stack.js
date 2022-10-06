@@ -1,44 +1,38 @@
-
 class MinStack {
-    data = [];
-    constructor() {
-        this.data = [];
+
+    public MinStack() {
+        
     }
-/** 
- * @param {number} val
- * @return {void}
- */
-push = function(val) {
-    this.data.push(val)
-};
+    Stack<Integer> s=new Stack<Integer>();
+    
+    public void push(int val) {
+        s.push(val);
+    }
+    
+    public void pop() {
+        s.pop();
+    }
+    
+    public int top() {
+        return s.peek();
+    }
+    
+    public int getMin() {
+        int temp=s.peek();
+        for(int x:s){
+            if(x<temp){
+                temp=x;
+            }
+        }
+        return temp;
+    }
+}
 
 /**
- * @return {void}
- */
-pop = function() {
-    this.data.pop()
-};
-
-/**
- * @return {number}
- */
-top = function() {
-    return this.data[this.data.length-1]
-};
-
-/**
- * @return {number}
- */
-getMin = function() {
-   var min = Math.min(...this.data)
-   return min
-};
-};
-/** 
  * Your MinStack object will be instantiated and called as such:
- * var obj = new MinStack()
- * obj.push(val)
- * obj.pop()
- * var param_3 = obj.top()
- * var param_4 = obj.getMin()
+ * MinStack obj = new MinStack();
+ * obj.push(val);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
  */
